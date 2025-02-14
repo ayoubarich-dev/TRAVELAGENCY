@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <div class="logo">
+      <img src="assets/images/3-removebg-preview.png">
+  </div>
+  
+  <ul class="nav-links">
+    <li><a [routerLink]="['/']" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+    <li><a [routerLink]="['/explore']" routerLinkActive="active-link">Explore</a></li>
+    <li><a [routerLink]="['/alloffers']" routerLinkActive="active-link">Offers</a></li>
+    <li><a [routerLink]="['/Store']" routerLinkActive="active-link">Store</a></li>
+  </ul>
+  <div class="auth-buttons">
+    <a class="login" [routerLink]="['/login']" [queryParams]="{ mode: 'login' }" [ngClass]="{ 'active': isAuthMode('login') }">Login</a> 
+    <a class="signup" [routerLink]="['/login']" [queryParams]="{ mode: 'signup' }" [ngClass]="{ 'active': isAuthMode('signup') }">Sign up</a> 
+  </div>
+</nav>

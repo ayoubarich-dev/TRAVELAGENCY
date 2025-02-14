@@ -1,0 +1,91 @@
+.hero {
+  height: 50vh;
+  background: url('/assets/images/pexels-girlvsglobe86-300284270-17644052.jpg') no-repeat center center/cover;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.content {
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  
+}
+#h11{
+  font-family: 'playfair';
+  font-size: 55px;
+  color:#fff;
+}
+
+
+/* General Styles */
+#allstore {
+  padding: 20px;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.list-group-item {
+  transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+#btnstore {
+  background-color: #e65a50;
+  border: none;
+}
+
+#btnstore:hover {
+  background-color: #d44a40;
+}
+
+.badge {
+  font-size: 0.75rem;
+}
+
+/* Payment Form Styles */
+.payment-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-check-label {
+  font-weight: 500;
+}
+
+
+
+#pay{
+  width: 50%;
+  margin-left: 24%;
+}
+#total{
+  font-size: 20px;
+}
+
+
+.row{
+  width: 100%;
+}
+#payyy{
+  width: 200%;
+}

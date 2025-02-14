@@ -1,0 +1,187 @@
+<div class="hero position-relative text-white" style="background: url('{{selectedOffer.image}}') no-repeat center center/cover;">
+    <div class="overlay position-absolute w-100 h-100"></div>
+    <div class="content position-absolute " >
+      <h1 id="h11">Treasures of Morocco: Unique Souvenirs for Every Journey</h1>
+     
+    </div>
+  </div>
+  <section class="hero text-white">
+    <div class="container hero-content">
+      <h1 class="tour-title mb-3">Le Grand Tour</h1>
+      <h2 style="margin-left: 40%;font-size: 50px; color: rgb(241, 112, 112);" class="h3 mb-4">{{selectedOffer.title}}</h2>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Info Card -->
+    <div class="info-card p-4 mb-5">
+      <div class="row g-4">
+        <div class="col-md-3 text-center">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h5>Dates</h5>
+          <p class="mb-0">{{selectedOffer.datedepart}} - {{selectedOffer.datefin}}</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-hotel"></i>
+          </div>
+          <h5>Hébergement</h5>
+          <p class="mb-0">HÔTEL 4 ÉTOILES</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h5>Durée</h5>
+          <p class="mb-0">{{selectedOffer.time}}</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="feature-icon mx-auto">
+            <i class="fas fa-tag"></i>
+          </div>
+          <h5>Prix</h5>
+          <p class="mb-0">{{selectedOffer.price}} DH</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Programme Section -->
+    <section class="programme-section mb-5">
+      <h2 class="text-center mb-5">
+        <span class="badge bg-primary p-3 rounded-pill">
+          <i class="fas fa-map-marked-alt me-2" ></i>Programme
+        </span>
+      </h2>
+
+      <div class="timeline">
+        <div class="row" *ngFor="let programme of selectedOffer.programmes">
+          <div class="col-lg-8 mx-auto">
+            <div class="day-card">
+              <div class="p-4">
+                <h3 class="h4 mb-4">{{ programme.day }}</h3>
+                
+                <div class="events">
+                  <div class="event mb-3" *ngFor="let event of programme.schedule">
+                    <div class="d-flex align-items-center">
+                      <span style="color: rgb(237, 194, 87);" class="event-time me-3">{{ event.time }}</span>
+                      <div class="event-description flex-grow-1">
+                        {{ event.description }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="image-container mt-4">
+                  <img [src]="programme.image" alt="Programme image" class="img-fluid">
+                  <div class="floating-badge">
+                    <i class="fas fa-camera me-2"></i>Highlight
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="reservation">
+    <h2 class="reservation-title">Reservation</h2>
+    
+    <form class="reservation-form">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <label for="id-number">ID Number <span class="required">*</span></label>
+                <input type="text" id="id-number" placeholder="ID Card Number" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="phone">Phone <span class="required">*</span></label>
+                <input type="tel" id="phone" placeholder="Phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="departure-date">Departure Date <span class="required">*</span></label>
+                <select id="departure-date" required>
+                    <option value="30 January 2025">{{selectedOffer.datedepart}} 2025</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="departure-city">Departure City <span class="required">*</span></label>
+                <select id="departure-city" required>
+                    <option value="CASABLANCA">{{selectedOffer.villedepart}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="age">Your Age Group? <span class="required">*</span></label>
+                <select id="age" required>
+                    <option value="18-24 Years">18-24 Years</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="first-time">First Trip with SAFFR? <span class="required">*</span></label>
+                <select id="first-time" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group full-width">
+            <label>Activities You Want to Do?</label>
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="activities" value="quad">
+                    Quad at Lalla Takerkoust
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="activities" value="dinner">
+                    Dinner + Show at Agafay
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="activities" value="hot-air-balloon">
+                    Hot Air Balloon in Marrakech
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="activities" value="studio">
+                    Visit Oscar Studio
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="activities" value="camel">
+                    Camel Ride
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="remarks">Other Remarks</label>
+            <textarea id="remarks" placeholder="Food allergies..."></textarea>
+        </div>
+
+        <div class="form-group full-width">
+            <label class="checkbox-label">
+                <input type="checkbox" required>
+                I have read and accept the <a href="#" class="conditions-link">terms and conditions</a>
+            </label>
+        </div>
+
+        <button type="submit" class="submit-btn">BOOK NOW</button>
+    </form>
+</section>
